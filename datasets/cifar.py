@@ -45,25 +45,13 @@ def high_freq_idct(dct_clean, dct, dct_size):
     return img
 
 
-def low_freq_clip(dct_clean, dct_size, intensity):
+def high_freq_clip(dct_clean, dct_size):
 
-    dct_low = dct_clean[:dct_size , :dct_size]
-    dct_low = (dct_low - np.min(dct_low)) / (np.max(dct_low)-np.min(dct_low))
-    dct_low = intensity * dct_low
+    dct_high = dct_clean[-dct_size:, -dct_size:]
 
-    x = np.arange(dct_low.shape[0])
-    y = np.arange(dct_low.shape[1])
+    return dct_high
 
-    interp_func = interp2d(x, y, dct_low, kind='linear')
-    
-    xi = np.linspace(0, 1, int(dct_clean.shape[1] / 2))
-    yi = np.linspace(0, 1, int(dct_clean.shape[1] / 2))
-
-    target_matrix = interp_func(xi, yi)
-
-    return target_matrix
-
-def preprocess(img_clean, img, img_size=32, dct_size=10, intensity=0.05):
+def preprocess(img_clean, img, img_size=32, dct_size=16):
 
     img_clean = np.float32(img_clean)
     r_clean, g_clean, b_clean = cv2.split(img_clean)
@@ -79,9 +67,9 @@ def preprocess(img_clean, img, img_size=32, dct_size=10, intensity=0.05):
     g_dct = cv2.dct(g)
     b_dct = cv2.dct(b)
 
-    r_clean_freq = low_freq_clip(r_clean_dct, dct_size, intensity=intensity)
-    g_clean_freq = low_freq_clip(g_clean_dct, dct_size, intensity=intensity)
-    b_clean_freq = low_freq_clip(b_clean_dct, dct_size, intensity=intensity)
+    r_clean_freq = high_freq_clip(r_clean_dct, dct_size)
+    g_clean_freq = high_freq_clip(g_clean_dct, dct_size)
+    b_clean_freq = high_freq_clip(b_clean_dct, dct_size)
 
     ###### Perturbation and Turn to zero ######
     r_img = high_freq_idct(copy.deepcopy(r_clean_freq), copy.deepcopy(r_dct), int(img.shape[1] / 2))
@@ -150,12 +138,12 @@ def get_cifar(args, alg, name, num_labels, num_classes, logger, data_dir='./data
         for idx in range(len(poisoned_ulb_data)):
             rd = random.randint(0, len(lb_data)-1)
             ulb_data_img = preprocess(copy.deepcopy(lb_data[rd]), copy.deepcopy(poisoned_ulb_data[idx]),
-                                img_size=32, dct_size=int(poisoned_ulb_data.shape[2] * 1/3), intensity=0.4)
+                                img_size=32, dct_size=int(poisoned_ulb_data.shape[2] * 1/2))
             poisoned_ulb_data[idx] = ulb_data_img
     
 #         poisoned_ulb_data = poisoned_ulb_data.astype(np.float32) / 255.0
 
-# #### DeepSweep ####  
+#### Median Filter ####  
 #         aug = albumentations.MedianBlur(p=1,blur_limit=(5,5))
 #         for index in range(len(poisoned_ulb_data)):
 #             augmented = aug(image=(poisoned_ulb_data[index]*255).astype(np.uint8))
@@ -204,7 +192,7 @@ def poison_train(ulb_data, ulb_targets, logger, target_class, poisoning_rate):
    
     num_samples = len(ulb_data) #50000
     num_poisoned_samples = int(num_samples * poisoning_rate) #100 
-    target_indices = np.where(ulb_targets == target_class)[0] #5000 #CIFAR100: 500
+    target_indices = np.where(ulb_targets == target_class)[0] #5000
     
     poisoned_indices = np.random.choice(target_indices, num_poisoned_samples, replace=False) #100
     
