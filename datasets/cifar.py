@@ -13,7 +13,7 @@ from .datasetbase import BasicDataset
 from semilearn.datasets.augmentation import RandAugment, RandomResizedCropAndInterpolation
 from semilearn.datasets.utils import split_ssl_data
 
-## Additional
+## Need to import
 import cv2
 import random
 from scipy.signal import gaussian
@@ -154,20 +154,7 @@ def get_cifar(args, alg, name, num_labels, num_classes, logger, data_dir='./data
             poisoned_ulb_data[idx] = ulb_data_img
     
 #         poisoned_ulb_data = poisoned_ulb_data.astype(np.float32) / 255.0
-# #### DePuD ####  
-        # mn=0
-        # std_dev=25
-        # for index in range(len(poisoned_ulb_data)):
-        #     mask = np.random.randint(0, 2, size=poisoned_ulb_data[index].shape)
-        #     height, width, channels = poisoned_ulb_data[index].shape
-        #     mask_c1 = np.random.rand(height, width).astype(np.float32)
-        #     mask_c2 = np.random.rand(height, width).astype(np.float32)
-        #     mask_c3 = np.random.rand(height, width).astype(np.float32)
 
-        #     mask = np.stack((mask_c1, mask_c2, mask_c3), axis=-1)
-        #     gaussian_noise = np.random.normal(mn, std_dev, poisoned_ulb_data[index].shape).astype(np.float32)
-        #     poisoned_ulb_data[index] = np.uint8(np.clip(poisoned_ulb_data[index]+gaussian_noise * mask, 0, 255))
-            
 # #### DeepSweep ####  
 #         aug = albumentations.MedianBlur(p=1,blur_limit=(5,5))
 #         for index in range(len(poisoned_ulb_data)):
@@ -178,7 +165,7 @@ def get_cifar(args, alg, name, num_labels, num_classes, logger, data_dir='./data
 #             poisoned_ulb_data[index] = cv2.bilateralFilter(poisoned_ulb_data[index], d=3, sigmaColor=75, sigmaSpace=75)
 
 #### Gaussian Filter ####
-#                 poisoned_ulb_data[index] = cv2.GaussianBlur(poisoned_ulb_data[index], (3, 3), 1)
+#             poisoned_ulb_data[index] = cv2.GaussianBlur(poisoned_ulb_data[index], (3, 3), 1)
         
     lb_count = [0 for _ in range(num_classes)]
     ulb_count = [0 for _ in range(num_classes)]
