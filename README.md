@@ -2,7 +2,7 @@
 <h1>UPure</h1>
 <h3>Defending Against Repetitive Backdoor Attacks on Semi-supervised Learning through Lens of Rate-Distortion-Perception Trade-off</h3>
 
-[Cheng-Yi Lee](https://scholar.google.com.tw/citations?hl=en&user=rChf7L4AAAAJ)<sup>1</sup> \*,Ching-Chia Kao<sup>2</sup> \*,Cheng-Han Yeh<sup>1</sup>, [Chun-Shien Lu](https://scholar.google.com.tw/citations?user=3iOHvUAAAAAJ&hl=en&oi=ao)<sup>1</sup>, [Chia-Mu Yu](https://scholar.google.com.tw/citations?user=dW4W4isAAAAJ&hl=en&oi=ao)<sup>3</sup>, [Chu-Song Chen](https://scholar.google.com.tw/citations?user=WKk6fIQAAAAJ&hl=en&oi=ao)<sup>2 :email:</sup>
+[Cheng-Yi Lee](https://scholar.google.com.tw/citations?hl=en&user=rChf7L4AAAAJ)<sup>1</sup> \*,Ching-Chia Kao<sup>2</sup> \*,Cheng-Han Yeh<sup>1</sup>, [Chun-Shien Lu](https://scholar.google.com.tw/citations?user=3iOHvUAAAAAJ&hl=en&oi=ao)<sup>1 :email:</sup>, [Chia-Mu Yu](https://scholar.google.com.tw/citations?user=dW4W4isAAAAJ&hl=en&oi=ao)<sup>3</sup>, [Chu-Song Chen](https://scholar.google.com.tw/citations?user=WKk6fIQAAAAJ&hl=en&oi=ao)<sup>2</sup>
 
 <sup>1</sup> Academia Sinica, <sup>2</sup> National Taiwan University,  <sup>3</sup> National Yang Ming Chiao Tung University
 
@@ -12,12 +12,12 @@ WACV 2025, ArXiv Preprint ([arXiv 2407.10180](https://arxiv.org/abs/2407.10180))
 
 </div>
 
+## Abstract
+Semi-supervised learning (SSL) has achieved remarkable performance with a small fraction of labeled data by leveraging vast amounts of unlabeled data from the Internet. However, this large pool of untrusted data is extremely vulnerable to data poisoning, leading to potential backdoor attacks. Current backdoor defenses are not yet effective against such a vulnerability in SSL. In this study, we propose a novel method, Unlabeled Data Purification (UPure), to disrupt the association between trigger patterns and target classes by introducing perturbations in the frequency domain. By leveraging the Rate-Distortion-Perception (RDP) trade-off, we further identify the frequency band, where the perturbations are added, and justify this selection. Notably, UPure purifies poisoned unlabeled data without the need of extra clean labeled data. Extensive experiments on four benchmark datasets and five SSL algorithms demonstrate that UPure effectively reduces the attack success rate from 99.78% to 0% while maintaining model accuracy.
+
+
 ### Introduction
-The official code of "Defending Against Repetitive Backdoor Attacks on Semi-supervised Learning through Lens of Rate-Distortion-Perception Trade-off"
-
-In our implementation, we follow the unified Semi-supervised Learning (SSL) framework, namely [USB](https://github.com/microsoft/Semi-supervised-learning) to train a model by using SSL algorithm, such as Mixmatch, Remixmatch Fixmixmatch.
-
-To make our implementation clear, we omit the files used in this framework. Instead, we include our implementation and description in this repository.
+The official code is "Defending Against Repetitive Backdoor Attacks on Semi-supervised Learning through Lens of Rate-Distortion-Perception Trade-off." In our implementation, we follow the unified Semi-supervised Learning (SSL) framework, namely [USB](https://github.com/microsoft/Semi-supervised-learning), to train a model using SSL algorithms, such as Mixmatch, Remixmatch, and Fixmatch. To make our implementation clear, we omit the files used in this framework. Instead, we include our implementation and description in this repository.
 
 ### Before the start
 Please read the documents at [USB](https://github.com/microsoft/Semi-supervised-learning) and install the corresponding packages.
