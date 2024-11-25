@@ -20,7 +20,7 @@ Semi-supervised learning (SSL) has achieved remarkable performance with a small 
 The official code is "Defending Against Repetitive Backdoor Attacks on Semi-supervised Learning through Lens of Rate-Distortion-Perception Trade-off." In our implementation, we follow the unified Semi-supervised Learning (SSL) framework, namely [USB](https://github.com/microsoft/Semi-supervised-learning), to train a model using SSL algorithms, such as Mixmatch, Remixmatch, and Fixmatch. To make our implementation clear, we omit the files used in this framework. Instead, we include our implementation and description in this repository.
 
 ## Before the start
-Please read the documents at [USB](https://github.com/microsoft/Semi-supervised-learning) and install the corresponding packages.
+Please read the documents at [USB](https://github.com/microsoft/Semi-supervised-learning) and install the corresponding packages (requirements.txt).
 
 ## Detailed Description
 ### Please follow these steps to replace the specified files in USB.
@@ -50,10 +50,10 @@ Please read the documents at [USB](https://github.com/microsoft/Semi-supervised-
 If you find UPure is useful in your research or applications, please consider giving us a star 🌟 and citing it in the following BibTeX entry.
 
 ```bibtex
-@inproceedings{lee2024defending,
+@inproceedings{lee2025defending,
   title={Defending Against Repetitive Backdoor Attacks on Semi-supervised Learning through Lens of Rate-Distortion-Perception Trade-off},
   author={Lee, Cheng-Yi and Kao, Ching-Chia and Yeh, Cheng-Han and Lu, Chun-Shien and Yu, Chia-Mu and Chen, Chu-Song},
   booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision},
-  year={2024}
+  year={2025}
 }
 ```
