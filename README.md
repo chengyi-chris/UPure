@@ -2,7 +2,7 @@
 <h1>UPure</h1>
 <h3>Defending Against Repetitive Backdoor Attacks on Semi-supervised Learning through Lens of Rate-Distortion-Perception Trade-off</h3>
 
-[Cheng-Yi Lee](https://scholar.google.com.tw/citations?hl=en&user=rChf7L4AAAAJ)<sup>1</sup> \*,Ching-Chia Kao<sup>2</sup> \*,Cheng-Han Yeh<sup>1</sup>, [Chun-Shien Lu](https://scholar.google.com.tw/citations?user=3iOHvUAAAAAJ&hl=en&oi=ao)<sup>1</sup>, [Chia-Mu Yu](https://scholar.google.com.tw/citations?user=dW4W4isAAAAJ&hl=en&oi=ao)<sup>3</sup>, [Chu-Song Chen]([https://xwcv.github.io/](https://scholar.google.com.tw/citations?user=WKk6fIQAAAAJ&hl=en&oi=ao))<sup>2 :email:</sup>
+[Cheng-Yi Lee](https://scholar.google.com.tw/citations?hl=en&user=rChf7L4AAAAJ)<sup>1</sup> \*,Ching-Chia Kao<sup>2</sup> \*,Cheng-Han Yeh<sup>1</sup>, [Chun-Shien Lu](https://scholar.google.com.tw/citations?user=3iOHvUAAAAAJ&hl=en&oi=ao)<sup>1</sup>, [Chia-Mu Yu](https://scholar.google.com.tw/citations?user=dW4W4isAAAAJ&hl=en&oi=ao)<sup>3</sup>, [Chu-Song Chen](https://scholar.google.com.tw/citations?user=WKk6fIQAAAAJ&hl=en&oi=ao)<sup>2 :email:</sup>
 
 <sup>1</sup> Academia Sinica, <sup>2</sup> National Taiwan University,  <sup>3</sup> National Yang Ming Chiao Tung University
 
