@@ -1,9 +1,21 @@
-# Anonymous Repo
-## ECCV #3021
-### Introduction
-The official code of "Defending Against Unlabeled Data Poisoning Attack on Semi-Supervised Learning through Lens of Rate-Distortion-Perception Trade-off"
+<div align="center">
+<h1>UPure</h1>
+<h3>Defending Against Repetitive Backdoor Attacks on Semi-supervised Learning through Lens of Rate-Distortion-Perception Trade-off</h3>
 
-In our implementation, we follow the unified SSL framework, namely [USB](https://github.com/microsoft/Semi-supervised-learning) to train a model by using SSL algorithm.
+[Cheng-Yi Lee](https://scholar.google.com.tw/citations?hl=en&user=rChf7L4AAAAJ)<sup>1</sup> \*,Ching-Chia Kao<sup>2</sup> \*,Cheng-Han Yeh<sup>1</sup>, [Chun-Shien Lu](https://scholar.google.com.tw/citations?user=3iOHvUAAAAAJ&hl=en&oi=ao)<sup>1</sup>, [Chia-Mu Yu](https://scholar.google.com.tw/citations?user=dW4W4isAAAAJ&hl=en&oi=ao)<sup>3</sup>, [Chu-Song Chen]([https://xwcv.github.io/](https://scholar.google.com.tw/citations?user=WKk6fIQAAAAJ&hl=en&oi=ao))<sup>2 :email:</sup>
+
+<sup>1</sup> Academia Sinica, <sup>2</sup> National Taiwan University,  <sup>3</sup> National Yang Ming Chiao Tung University
+
+(\*) equal contribution, (<sup>:email:</sup>) corresponding author.
+
+WACV 2025, ArXiv Preprint ([arXiv 2407.10180](https://arxiv.org/abs/2407.10180))
+
+</div>
+
+### Introduction
+The official code of "Defending Against Repetitive Backdoor Attacks on Semi-supervised Learning through Lens of Rate-Distortion-Perception Trade-off"
+
+In our implementation, we follow the unified Semi-supervised Learning (SSL) framework, namely [USB](https://github.com/microsoft/Semi-supervised-learning) to train a model by using SSL algorithm, such as Mixmatch, Remixmatch Fixmixmatch.
 
 To make our implementation clear, we omit the files used in this framework. Instead, we include our implementation and description in this repository.
 
@@ -11,7 +23,7 @@ To make our implementation clear, we omit the files used in this framework. Inst
 Please read the documents at [USB](https://github.com/microsoft/Semi-supervised-learning) and install the corresponding packages.
 
 ### Detailed Description
-#### Please follow these steps to replace the specified files  into USB.
+#### Please follow these steps to replace the specified files in USB.
 1. Files located in the **datasets** folder should be replaced with those found at:
 ```Semi-supervised-learning/semilearn/semilearn/datasets/cv_datasets/```
 
